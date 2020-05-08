@@ -7,20 +7,44 @@
 </head>
 <body>
   <div id="app">
+
+    <h1>编译：对象属性插值</h1>
     <h2>{{person.name}} -- {{person.age}}</h2>
-    <h3>{{person.fav}}</h3>
+    <h2>{{person.fav}}</h3>
     <hr>
+
+    <h1>编译：列表循环</h1>
     <ul>
       <li>1</li>
       <li>2</li>
       <li>3</li>
     </ul>
     <hr>
-    
-  </div>
-  <script src="../../vue-source-code/vue/dist/vue.js"></script>
-  <script>
 
+    <h1>编译：普通插值、v-text、v-model</h1>
+    <h2>{{msg}}</h3>
+    <h2 v-text="msg"></h2>
+    <input type="text" v-model="msg" />
+
+    <hr>
+    <h2>编译：v-html</h2>
+    <div v-html="htmlStr"></div>
+  </div>
+  <!-- <script src="../../vue-source-code/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: "#app",
+      data: {
+        person: {
+          name: "zxcc",
+          age: "18",
+          fav: "music"
+        },
+        msg: "learn mvvm",
+        htmlStr: "222222222333333333333"
+      }
+    })
   </script>
 </body>
 </html>
